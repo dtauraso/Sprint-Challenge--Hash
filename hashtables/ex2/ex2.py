@@ -10,5 +10,18 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
+    trip = {}
+
+    for ticket in tickets:
+        trip[ticket.source] = ticket.destination
+    
+    # [print(i, trip[i]) for i in trip]
+    # print()
+    tracker = 'NONE'
+    route = [trip[tracker]]
+    tracker = trip[tracker]
+    while tracker != 'NONE':
+        route.append(trip[tracker])
+        tracker = trip[tracker]
 
     return route

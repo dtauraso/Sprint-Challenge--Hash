@@ -1,9 +1,19 @@
+from collections import defaultdict
 def intersection(arrays):
 
     """
     YOUR CODE HERE
     """
+    frequency = defaultdict(int)
 
+    for array in arrays:
+        for number in array:
+            frequency[number] += 1
+    # [print(i, frequency[i]) for i in frequency]
+    # only numbers with frequency == total number of arrays
+    # are in the intersection
+    result = [i for i in frequency
+                        if frequency[i] == len(arrays)]
     return result
 
 
